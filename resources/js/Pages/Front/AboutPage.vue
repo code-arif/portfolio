@@ -1,5 +1,5 @@
 <script setup>
-import AboutComponent from '@/Components/Front/AboutComponent.vue';
+import AboutComponent from '@/Components/Front/About/AboutComponent.vue';
 import { Head } from '@inertiajs/vue3';
 import FrontLayout from '@/Layouts/FrontLayout.vue';
 </script>

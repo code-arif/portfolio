@@ -1,6 +1,5 @@
 <script setup>
 import { Link } from '@inertiajs/vue3';
-import SingleProjectSlideComponent from './SingleProjectSlideComponent.vue';
 </script>
 
 <template>
@@ -131,10 +130,7 @@ import SingleProjectSlideComponent from './SingleProjectSlideComponent.vue';
         </div>
 
     </section>
-
-    <!-- recently finished projects -->
-    <!-- <SingleProjectSlideComponent /> -->
-
+    
 </template>
 
 <style scoped>

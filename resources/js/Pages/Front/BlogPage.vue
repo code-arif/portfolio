@@ -1,5 +1,5 @@
 <script setup>
-import BlogComponent from '@/Components/BlogComponent.vue';
+import BlogComponent from '@/Components/Front/Blog/BlogComponent.vue';
 import { Head } from '@inertiajs/vue3';
 import FrontLayout from '@/Layouts/FrontLayout.vue';
 </script>

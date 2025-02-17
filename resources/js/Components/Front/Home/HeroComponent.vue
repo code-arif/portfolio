@@ -1,6 +1,6 @@
 <script setup>
 import { ref, onMounted } from 'vue';
-import HireMeComponent from '../HireMeComponent.vue';
+import HireMeComponent from './HireMeComponent.vue';
 
 const counters = ref([
   { label: 'Happy Clients', value: 0, target: 120 },

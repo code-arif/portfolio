@@ -1,7 +1,6 @@
 <script setup>
-import TopBarComponent from '@/Components/Admin/Includes/TopBarComponent.vue';
-import SideBarComponent from '@/Components/Admin/Includes/SideBarComponent.vue';
 import { Head } from '@inertiajs/vue3';
+import AdminLayout from '@/Layouts/AdminLayout.vue';
 </script>
 
 <template>
@@ -9,13 +8,9 @@ import { Head } from '@inertiajs/vue3';
         <title> CodeAirf || Dashboard</title>
     </Head>
 
-    <div class="container-fluid position-relative d-flex p-0">
-        <SideBarComponent />
-
-        <div class="content">
-            <TopBarComponent />
-        </div>
-    </div>
+    <AdminLayout>
+        
+    </AdminLayout>
 </template>
 
 <style scoped></style>

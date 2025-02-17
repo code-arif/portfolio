@@ -44,12 +44,18 @@
                 <!-- Newsletter Subscription Section -->
                 <div class="col-lg-4 col-md-6 col-sm-12 text-center text-md-left">
                     <h4>Subscribe to Newsletter</h4>
-                    <p>Get the latest tech articles in your mail.</p>
+                    <p>Get the latest tech articles in your mail. Lorem ipsum dolor sit amet consectetur, adipisicing
+                        elit. Quis, ducimus!</p>
                     <form class="form-inline d-flex justify-content-center justify-content-md-start">
-                        <input type="email" class="form-control mb-2 mr-2" placeholder="Enter your email">
-                        <button class="btn btn-dark mb-2">Subscribe</button>
+                        <div class="d-flex">
+                            <input type="email" class="form-control rounded-start" placeholder="Enter your email"
+                                style="border-top-right-radius: 0; border-bottom-right-radius: 0;">
+                            <button type="submit" class="btn btn-dark"
+                                style="border-top-left-radius: 0; border-bottom-left-radius: 0;">Send</button>
+                        </div>
                     </form>
                 </div>
+
             </div>
         </div>
         <hr>

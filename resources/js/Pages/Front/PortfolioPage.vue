@@ -1,7 +1,6 @@
 <script setup>
 import { Head } from '@inertiajs/vue3';
-import PortfolioComponent from '@/Components/PortfolioComponent.vue';
-import TestComponent from '@/Components/TestComponent.vue';
+import PortfolioComponent from '@/Components/Front/Portfolio/PortfolioComponent.vue';
 import FrontLayout from '@/Layouts/FrontLayout.vue';
 </script>
 
@@ -11,13 +10,8 @@ import FrontLayout from '@/Layouts/FrontLayout.vue';
         <title>Codearif || Portfolio</title>
     </Head>
 
-    <Header />
     <FrontLayout>
         <PortfolioComponent />
     </FrontLayout>
-
-    <!-- <TestComponent /> -->
-
-    <Footer />
 </template>
 

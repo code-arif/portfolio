@@ -1,7 +1,7 @@
 <script setup>
 import FrontLayout from '@/Layouts/FrontLayout.vue';
 import { Head, Link } from '@inertiajs/vue3';
-import ContactComponent from '@/Components/ContactComponent.vue';
+import ContactComponent from '@/Components/Front/Contact/ContactComponent.vue';
 </script>
 
 <template>

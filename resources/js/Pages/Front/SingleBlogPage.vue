@@ -1,6 +1,6 @@
 <script setup>
 import { Head } from '@inertiajs/vue3';
-import SingleBlogComponent from '@/Components/SingleBlogComponent.vue';
+import SingleBlogComponent from '@/Components/Front/Blog/SingleBlogComponent.vue';
 import FrontLayout from '@/Layouts/FrontLayout.vue';
 </script>
 
