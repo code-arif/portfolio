@@ -12,10 +12,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- FAV AND ICONS   -->
-    <link rel="shortcut icon" href=" {{ asset('assets/assets/images/favicon.ico') }} ">
-    <link rel="shortcut icon" href=" {{ asset('assets/assets/images/apple-icon.png') }}">
-    <link rel="shortcut icon" sizes="72x72" href=" {{ asset('assets/assets/images/apple-icon-72x72.png') }}">
-    <link rel="shortcut icon" sizes="114x114" href=" {{ asset('assets/assets/images/apple-icon-114x114.png') }} ">
+    <link rel="shortcut icon" href=" {{ asset('assets/images/favicon.png') }} ">
 
     <!-- Google Font-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -24,47 +21,54 @@
         rel="stylesheet">
 
     <!-- Font Awesome -->
-    <link rel="stylesheet" href=" {{ asset('assets/assets/icons/font-awesome-4.7.0/css/font-awesome.min.css') }} ">
-    <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+    <link rel="stylesheet" href=" {{ asset('assets/icons/font-awesome-4.7.0/css/font-awesome.min.css') }} ">
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href=" {{ asset('assets/assets/plugins/css/bootstrap.min.css') }} ">
+    <link rel="stylesheet" href=" {{ asset('assets/plugins/css/bootstrap.min.css') }} ">
     <!-- Animate CSS-->
-    <link rel="stylesheet" href=" {{ asset('assets/assets/plugins/css/animate.css') }} ">
+    <link rel="stylesheet" href=" {{ asset('assets/plugins/css/animate.css') }} ">
     <!-- Owl Carousel CSS-->
-    <link rel="stylesheet" href=" {{ asset('assets/assets/plugins/css/owl.css') }} ">
+    <link rel="stylesheet" href=" {{ asset('assets/plugins/css/owl.css') }} ">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" />
+
     <!-- Fancybox-->
-    <link rel="stylesheet" href=" {{ asset('assets/assets/plugins/css/jquery.fancybox.min.css') }} ">
+    <link rel="stylesheet" href=" {{ asset('assets/plugins/css/jquery.fancybox.min.css') }} ">
 
     <!-- Custom CSS-->
-    <link rel="stylesheet" href=" {{ asset('assets/assets/css/styles.css') }} ">
-    <link rel="stylesheet" href=" {{ asset('assets/assets/css/responsive.css') }} ">
-    <link rel="stylesheet" href=" {{ asset('assets/assets/navbar/nav.css') }} ">
+    <link rel="stylesheet" href=" {{ asset('assets/css/style.css') }} ">
+    <link rel="stylesheet" href=" {{ asset('assets/css/responsive.css') }} ">
+    <link rel="stylesheet" href=" {{ asset('assets/admin/style.css') }} ">
 
     <!-- Scripts -->
     @routes
-    @vite(['resources/js/app.js', "resources/js/Pages/{$page['component']}.vue", 'resources/css/app.css'])
+    @vite(['resources/js/app.js', 'resources/css/app.css'])
     @inertiaHead
 </head>
 
-<body class="white-vertion black-bg">
+<body class="black-bg">
     @inertia
 
     <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i
             class="fa fa-chevron-up" aria-hidden="true"></i></a>
-
+            
     {{-- all javascript is here --}}
-    <script src=" {{ asset('assets/assets/plugins/js/jquery.min.js') }}"></script>
+    <script src=" {{ asset('assets/plugins/js/jquery.min.js') }}"></script>
     <!-- bootstrap -->
-    <script src=" {{ asset('assets/assets/plugins/js/bootstrap.min.js') }}"></script>
+    <script src=" {{ asset('assets/plugins/js/bootstrap.min.js') }}"></script>
     <!-- owl carousel -->
-    <script src=" {{ asset('assets/assets/plugins/js/owl.carousel.js') }}"></script>
+    {{-- <script src=" {{ asset('assets/assets/plugins/js/owl.carousel.js') }}"></script> --}}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <script src="{{ asset('assets/plugins/js/isotope.pkgd.js') }}"></script>
+    <script src="{{ asset('assets/plugins/js/packery-mode.pkgd.js') }}"></script>
     <!-- wow -->
-    <script src=" {{ asset('assets/assets/plugins/js/wow.min.js') }}"></script>
+    <script src=" {{ asset('assets/plugins/js/wow.min.js') }}"></script>
     <!-- Fancybox js-->
-    <script src=" {{ asset('assets/assets/plugins/js/jquery.fancybox.min.js') }}"></script>
+    <script src=" {{ asset('assets/plugins/js/jquery.fancybox.min.js') }}"></script>
 
-    <script src=" {{ asset('assets/assets/js/custom-scripts.js') }} "></script>
-    <script src=" {{ asset('assets/assets/navbar/nav.js') }} "></script>
+    <script src=" {{ asset('assets/js/custom-scripts.js') }} "></script>
+    <script src=" {{ asset('assets/navbar/nav.js') }} "></script>
 </body>
 
 </html>

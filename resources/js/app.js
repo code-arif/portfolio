@@ -4,7 +4,6 @@ import {createApp,h} from 'vue';
 import {ZiggyVue} from '../../vendor/tightenco/ziggy';
 import NProgress from 'nprogress';
 
-
 createInertiaApp({
     resolve: (name) =>
         resolvePageComponent(
@@ -37,11 +36,11 @@ router.on('start', () => {
 });
 
 
-// router.on('progress', (event) => {
-//     if (event.detail.progress && event.detail.progress.percentage) {
-//         NProgress.set(event.detail.progress.percentage / 100);
-//     }
-// });
+router.on('progress', (event) => {
+    if (event.detail.progress && event.detail.progress.percentage) {
+        NProgress.set(event.detail.progress.percentage / 100);
+    }
+});
 
 router.on('finish', () => {
     NProgress.done();

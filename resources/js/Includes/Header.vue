@@ -29,10 +29,10 @@ onMounted(() => {
             <div class="container d-flex justify-content-center justify-content-md-between">
                 <div class="contact-info d-flex align-items-center">
                     <i class="fa fa-envelope d-flex align-items-center">
-                        <a href="mailto:contact@example.com">contact@example.com</a>
+                        <a class="contact-line" href="mailto:contact@example.com">contact@example.com</a>
                     </i>
-                    <i class="fa fa-phone d-flex align-items-center ml-4">
-                        <span>+1 5589 55488 55</span>
+                    <i class="fa fa-whatsapp d-flex align-items-center ml-4">
+                        <span class="contact-line">+1 5589 55488 55 (Whatsapp)</span>
                     </i>
                 </div>
                 <div class="social-links d-none d-md-flex align-items-center">
@@ -46,24 +46,34 @@ onMounted(() => {
         <!-- Branding Section -->
         <div class="branding d-flex align-items-center">
             <div class="container position-relative d-flex align-items-center justify-content-between">
-                <a href="index.html" class="logo d-flex align-items-center">
-                    <h1 class="sitename">CodeArif</h1>
-                </a>
+                <Link href="/" class="logo d-flex align-items-center">
+                <h1 class="sitename">CodeArif</h1>
+                </Link>
 
                 <!-- Navigation Menu -->
                 <nav id="navmenu" class="navmenu">
                     <ul :class="{ 'd-block': isMobileNavActive, 'd-none': !isMobileNavActive }">
-                        <li><Link href="/" :class="{'active' : $page.url === '/'}">Home</Link></li>
-                        <li><Link href="/about" :class="{'active' : $page.url === '/about'}">About</Link></li>
-                        <li><Link href="/portfolio" :class="{'active' : $page.url === '/portfolio'}">Portfolio</Link></li>
-                        <li><a href="/blog" :class="{'active' : $page.url === '/blog'}">Blog</a></li>
-                        <li><a href="#contact">Contact</a></li>
+                        <li>
+                            <Link href="/" :class="{ 'active': $page.url === '/' }">Home</Link>
+                        </li>
+                        <li>
+                            <Link href="/about" :class="{ 'active': $page.url === '/about' }">About</Link>
+                        </li>
+                        <li>
+                            <Link href="/portfolio" :class="{ 'active': $page.url === '/portfolio' }">Portfolio</Link>
+                        </li>
+                        <li>
+                            <Link href="/services" :class="{ 'active': $page.url === '/services' }">Services</Link>
+                        </li>
+                        <li>
+                            <Link href="/blog" :class="{ 'active': $page.url === '/blog' }">Blog</Link>
+                        </li>
+                        <li>
+                            <Link href="/contact" :class="{ 'active': $page.url === '/contact' }">Contact</Link>
+                        </li>
                     </ul>
-                    <i
-                        class="mobile-nav-toggle d-xl-none fa"
-                        :class="isMobileNavActive ? 'fa-times' : 'fa-bars'"
-                        @click="toggleMobileNav"
-                    ></i>
+                    <i class="mobile-nav-toggle d-xl-none fa" :class="isMobileNavActive ? 'fa-times' : 'fa-bars'"
+                        @click="toggleMobileNav"></i>
                 </nav>
             </div>
         </div>

@@ -7,8 +7,8 @@ import { Link } from '@inertiajs/vue3';
     <section class="mh-quates image-bg home-2-img">
         <div class="img-color-overlay">
             <div class="container">
-                <div class="section-separator">
-                    <div class="col-sm-12 d-flex justify-content-between mt-5">
+                <div style="padding: 50px 0;">
+                    <div class="col-sm-12 d-flex justify-content-between">
                         <div>
                             <h4 class="wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.2s"> Read My Blog
                             </h4>
@@ -27,7 +27,7 @@ import { Link } from '@inertiajs/vue3';
     </section>
 
     <!-- blog cards start -->
-    <section class="mh-blog image-bg featured-img-two" id="mh-blog">
+    <section class="codearif-blog image-bg featured-img-two" id="codearif-blog">
         <div class="img-color-overlay">
             <div class="container">
                 <div class="row section-separator">
@@ -35,11 +35,11 @@ import { Link } from '@inertiajs/vue3';
                         <h3>Featured Posts</h3>
                     </div>
                     <div class="col-sm-12 col-md-4">
-                        <div class="mh-blog-item dark-bg wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.3s">
-                            <img src="assets/assets/images/b-3.png" alt="" class="img-fluid">
+                        <div class="codearif-blog-item wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.3s">
+                            <img src="assets/images/b-1.jpg" alt="" class="img-fluid">
                             <div class="blog-inner">
                                 <h2><a href="blog-single.html">A life without the daily traffic jams</a></h2>
-                                <div class="mh-blog-post-info">
+                                <div class="codearif-blog-post-info">
                                     <ul>
                                         <li><strong>Post On</strong><a href="#">24.11.19</a></li>
                                         <li><strong>By</strong><a href="#">ThemeSpiders</a></li>
@@ -47,16 +47,16 @@ import { Link } from '@inertiajs/vue3';
                                 </div>
                                 <p>It is a long established fact that a reader will be distracted by the readable
                                     content of a page when looking at its layout</p>
-                                <a href="blog-single.html">Read More</a>
+                                <a href="/single-blog">Read More</a>
                             </div>
                         </div>
                     </div>
                     <div class="col-sm-12 col-md-4">
-                        <div class="mh-blog-item dark-bg wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.5s">
-                            <img src="assets/assets/images/b-2.png" alt="" class="img-fluid">
+                        <div class="codearif-blog-item dark-bg wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.5s">
+                            <img src="assets/images/b-2.jpg" alt="" class="img-fluid">
                             <div class="blog-inner">
                                 <h2><a href="blog-single.html">Proportion are what’s really needed</a></h2>
-                                <div class="mh-blog-post-info">
+                                <div class="codearif-blog-post-info">
                                     <ul>
                                         <li><strong>Post On</strong><a href="#">24.11.19</a></li>
                                         <li><strong>By</strong><a href="#">ThemeSpiders</a></li>
@@ -69,11 +69,11 @@ import { Link } from '@inertiajs/vue3';
                         </div>
                     </div>
                     <div class="col-sm-12 col-md-4">
-                        <div class="mh-blog-item dark-bg wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.7s">
-                            <img src="assets/assets/images/b-1.png" alt="" class="img-fluid">
+                        <div class="codearif-blog-item dark-bg wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.7s">
+                            <img src="https://img.freepik.com/free-photo/program-development-concept-young-indian-man-working-with-computer_231208-3642.jpg?t=st=1737188210~exp=1737191810~hmac=bd8f29f6cca270f2097c1358212aa34531f013817556edff45bd91d09881478d&w=1060" alt="" class="img-fluid">
                             <div class="blog-inner">
                                 <h2><a href="blog-single.html">Mounts of paper work to remember the way</a></h2>
-                                <div class="mh-blog-post-info">
+                                <div class="codearif-blog-post-info">
                                     <ul>
                                         <li><strong>Post On</strong><a href="#">24.11.19</a></li>
                                         <li><strong>By</strong><a href="#">ThemeSpiders</a></li>
@@ -86,11 +86,28 @@ import { Link } from '@inertiajs/vue3';
                         </div>
                     </div>
                     <div class="col-sm-12 col-md-4">
-                        <div class="mh-blog-item dark-bg wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.7s">
-                            <img src="assets/assets/images/b-1.png" alt="" class="img-fluid">
+                        <div class="codearif-blog-item wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.3s">
+                            <img src="assets/images/b-1.jpg" alt="" class="img-fluid">
                             <div class="blog-inner">
-                                <h2><a href="blog-single.html">Mounts of paper work to remember the way</a></h2>
-                                <div class="mh-blog-post-info">
+                                <h2><a href="blog-single.html">A life without the daily traffic jams</a></h2>
+                                <div class="codearif-blog-post-info">
+                                    <ul>
+                                        <li><strong>Post On</strong><a href="#">24.11.19</a></li>
+                                        <li><strong>By</strong><a href="#">ThemeSpiders</a></li>
+                                    </ul>
+                                </div>
+                                <p>It is a long established fact that a reader will be distracted by the readable
+                                    content of a page when looking at its layout</p>
+                                <a href="/single-blog">Read More</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-12 col-md-4">
+                        <div class="codearif-blog-item dark-bg wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.5s">
+                            <img src="assets/images/b-2.jpg" alt="" class="img-fluid">
+                            <div class="blog-inner">
+                                <h2><a href="blog-single.html">Proportion are what’s really needed</a></h2>
+                                <div class="codearif-blog-post-info">
                                     <ul>
                                         <li><strong>Post On</strong><a href="#">24.11.19</a></li>
                                         <li><strong>By</strong><a href="#">ThemeSpiders</a></li>
@@ -103,28 +120,11 @@ import { Link } from '@inertiajs/vue3';
                         </div>
                     </div>
                     <div class="col-sm-12 col-md-4">
-                        <div class="mh-blog-item dark-bg wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.7s">
-                            <img src="assets/assets/images/b-1.png" alt="" class="img-fluid">
+                        <div class="codearif-blog-item dark-bg wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.7s">
+                            <img src="https://img.freepik.com/free-photo/program-development-concept-young-indian-man-working-with-computer_231208-3642.jpg?t=st=1737188210~exp=1737191810~hmac=bd8f29f6cca270f2097c1358212aa34531f013817556edff45bd91d09881478d&w=1060" alt="" class="img-fluid">
                             <div class="blog-inner">
                                 <h2><a href="blog-single.html">Mounts of paper work to remember the way</a></h2>
-                                <div class="mh-blog-post-info">
-                                    <ul>
-                                        <li><strong>Post On</strong><a href="#">24.11.19</a></li>
-                                        <li><strong>By</strong><a href="#">ThemeSpiders</a></li>
-                                    </ul>
-                                </div>
-                                <p>It is a long established fact that a reader will be distracted by the readable
-                                    content of a page when looking at its layout</p>
-                                <a href="blog-single.html">Read More</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-12 col-md-4">
-                        <div class="mh-blog-item dark-bg wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.7s">
-                            <img src="assets/assets/images/b-1.png" alt="" class="img-fluid">
-                            <div class="blog-inner">
-                                <h2><a href="blog-single.html">Mounts of paper work to remember the way</a></h2>
-                                <div class="mh-blog-post-info">
+                                <div class="codearif-blog-post-info">
                                     <ul>
                                         <li><strong>Post On</strong><a href="#">24.11.19</a></li>
                                         <li><strong>By</strong><a href="#">ThemeSpiders</a></li>
