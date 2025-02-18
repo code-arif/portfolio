@@ -2,7 +2,14 @@ import {createInertiaApp, router} from '@inertiajs/vue3';
 import {resolvePageComponent} from 'laravel-vite-plugin/inertia-helpers';
 import {createApp,h} from 'vue';
 import {ZiggyVue} from '../../vendor/tightenco/ziggy';
+
+//progress bar
 import NProgress from 'nprogress';
+
+//toast
+import './Assets/js/toast.js';
+import Toastify from 'toastify-js';
+import "toastify-js/src/toastify.css";
 
 createInertiaApp({
     resolve: (name) =>
@@ -21,6 +28,7 @@ createInertiaApp({
             })
             .use(plugin)
             .use(ZiggyVue)
+            .use(Toastify)
             .mount(el);
     },
     progress: {

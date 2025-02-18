@@ -1,5 +1,5 @@
 <script setup>
-import ProfileEditComponent from '@/Components/Admin/Includes/ProfileEditComponent.vue';
+import ProfileUpdateComponent from '@/Components/Admin/ProfileUpdateComponent.vue';
 import AdminLayout from '@/Layouts/AdminLayout.vue';
 import { Head } from '@inertiajs/vue3';
 </script>
@@ -10,7 +10,7 @@ import { Head } from '@inertiajs/vue3';
     </Head>
 
     <AdminLayout>
-        
+        <ProfileUpdateComponent/>
     </AdminLayout>
 </template>
 

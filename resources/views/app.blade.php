@@ -62,6 +62,10 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
     <script src="{{ asset('assets/plugins/js/isotope.pkgd.js') }}"></script>
     <script src="{{ asset('assets/plugins/js/packery-mode.pkgd.js') }}"></script>
+
+    <!-- toast js -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    
     <!-- wow -->
     <script src=" {{ asset('assets/plugins/js/wow.min.js') }}"></script>
     <!-- Fancybox js-->
@@ -69,6 +73,7 @@
 
     <script src=" {{ asset('assets/js/custom-scripts.js') }} "></script>
     <script src=" {{ asset('assets/navbar/nav.js') }} "></script>
+
 </body>
 
 </html>

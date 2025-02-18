@@ -20,6 +20,7 @@
     },
     "dependencies": {
         "nprogress": "^0.2.0",
-        "owl.carousel": "^2.3.4"
+        "owl.carousel": "^2.3.4",
+        "toastify-js": "^1.12.0"
     }
 }

@@ -1,9 +1,14 @@
 <?php
 
-use App\Http\Controllers\DashboardController;
-use App\Http\Controllers\HomeController;
-use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Admin\AuthController;
 use Inertia\Inertia;
+use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\DashboardController;
+
+//=========================================Admin Routes =========================================//
+Route::get('/profile/{username}', [AuthController::class, 'show'])->name('show.profile');
+Route::post('/profile/{username}/update', [AuthController::class, 'update'])->name('update.profile');
 
 Route::get('/',[HomeController::class,'home'])->name('home');
 Route::get('/about',[HomeController::class,'about'])->name('about');
@@ -22,5 +27,5 @@ Route::get('/profile',[DashboardController::class,'profile']);
 
 //404 page
 Route::fallback(function () {
-    return Inertia::render('404'); // Render 404 component
+    return Inertia::render('404');
 });
