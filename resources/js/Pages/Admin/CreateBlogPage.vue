@@ -1,23 +1,17 @@
 <script setup>
-import TopBarComponent from '@/Components/Admin/Includes/TopBarComponent.vue';
-import SideBarComponent from '@/Components/Admin/Includes/SideBarComponent.vue';
-import CreateBlogComponent from '@/Components/Admin/CreateBlogComponent.vue';
 import { Head } from '@inertiajs/vue3';
+import AdminLayout from '@/Layouts/AdminLayout.vue';
+import CreateBlogComponent from '@/Components/Admin/CreateBlogComponent.vue';
 </script>
 
 <template>
     <Head>
-        <title> CodeAirf || Dashboard</title>
+        <title> CodeAirf || Create Blog</title>
     </Head>
 
-    <div class="container-fluid position-relative d-flex p-0">
-        <SideBarComponent />
-
-        <div class="content">
-            <TopBarComponent />
-            <CreateBlogComponent />
-        </div>
-    </div>
+    <AdminLayout>
+        <CreateBlogComponent/>
+    </AdminLayout>
 </template>
 
 <style scoped>

@@ -8,7 +8,7 @@ use App\Http\Controllers\DashboardController;
 
 //=========================================Admin Routes =========================================//
 Route::get('/profile/{username}', [AuthController::class, 'show'])->name('show.profile');
-Route::post('/profile/{username}/update', [AuthController::class, 'update'])->name('update.profile');
+Route::post('/profile/update/{username}', [AuthController::class, 'update'])->name('update.profile');
 
 Route::get('/',[HomeController::class,'home'])->name('home');
 Route::get('/about',[HomeController::class,'about'])->name('about');
@@ -23,7 +23,6 @@ Route::get('/contact',[HomeController::class,'contact'])->name('contact');
 Route::get('/dashboard',[DashboardController::class,'dashboard']);
 Route::get('/blog-create',[DashboardController::class,'create_blog']);
 Route::get('/login',[DashboardController::class,'login']);
-Route::get('/profile',[DashboardController::class,'profile']);
 
 //404 page
 Route::fallback(function () {

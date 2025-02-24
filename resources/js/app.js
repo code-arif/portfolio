@@ -11,6 +11,10 @@ import './Assets/js/toast.js';
 import Toastify from 'toastify-js';
 import "toastify-js/src/toastify.css";
 
+//quill editor
+import { QuillEditor } from '@vueup/vue-quill'
+import '@vueup/vue-quill/dist/vue-quill.snow.css';
+
 createInertiaApp({
     resolve: (name) =>
         resolvePageComponent(
@@ -29,6 +33,7 @@ createInertiaApp({
             .use(plugin)
             .use(ZiggyVue)
             .use(Toastify)
+            .use(QuillEditor)
             .mount(el);
     },
     progress: {

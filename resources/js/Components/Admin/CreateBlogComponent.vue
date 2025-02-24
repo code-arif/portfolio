@@ -7,27 +7,37 @@
         <div class="row g-4">
             <div class="col-sm-12 col-xl-12">
                 <div class="rounded h-100 p-4" style="background: #191C24;">
-                    <h6 class="mb-4">Floating Label</h6>
                     <div class="mb-3">
-                        <input type="email" class="form-control bg-dark text-white " placeholder="name@example.com">
-                        <label>Email address</label>
+                        <label class="text-light">Title</label>
+                        <input type="text" class="form-control bg-dark text-light" placeholder="Enter blog title">
                     </div>
                     <div class="mb-3">
-                        <input type="password" class="form-control"placeholder="Password">
-                        <label>Password</label>
+                        <label class="text-light">Description</label>
+                        <textarea class="form-control bg-dark text-light" placeholder="Blog Description"></textarea>
                     </div>
                     <div class="mb-3">
-                        <select class="form-select form-control">
-                            <option selected>Open this select menu</option>
-                            <option value="1">One</option>
-                            <option value="2">Two</option>
-                            <option value="3">Three</option>
-                        </select>
+                        <label class="text-light">Blog featured image</label>
+                        <input type="file" class="form-control-file bg-dark text-light"
+                            placeholder="Blog featured image">
                     </div>
-                    <div class="form-floating">
-                        <textarea class="form-control" placeholder="Leave a comment here"
-                            style="height: 150px;"></textarea>
-                        <label>Comments</label>
+
+                    <div class="mb-3">
+                        <label class="text-light">Blog featured image</label>
+
+                        <QuillEditor theme="snow" :toolbar="[
+                            [{ header: [1, 2, 3, 4, 5, 6, false] }], // Header levels
+                            [{ font: [] }], // Font family
+                            [{ size: ['small', false, 'large', 'huge'] }], // Font size
+                            ['bold', 'italic', 'underline', 'strike'], // Formatting buttons
+                            [{ color: [] }, { background: [] }], // Text and background colors
+                            [{ script: 'sub' }, { script: 'super' }], // Subscript and superscript
+                            [{ list: 'ordered' }, { list: 'bullet' }], // Lists
+                            [{ indent: '-1' }, { indent: '+1' }], // Indentation
+                            [{ align: [] }], // Alignment options
+                            ['blockquote', 'code-block'], // Blockquote and code block
+                            ['link', 'image', 'video'], // Media options
+                            ['clean'] // Clear formatting
+                        ]" />
                     </div>
                 </div>
             </div>
