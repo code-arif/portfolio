@@ -42,9 +42,12 @@ const authUserProfile = page.props?.authUser?.userProfile;
                 </Link>
 
                 <Link :href="route('show.skill.list.page')" class="nav-item nav-link" :class="{ 'active': route().current('show.skill.list.page') }"><i class="fa fa-pencil-square mr-2"></i>Skills</Link>
+               
+                <Link href="" class="nav-item nav-link"><i class="fa fa-graduation-cap mr-2"></i>Portfolio</Link>
+
                 <Link href="/blog-create" class="nav-item nav-link" :class="{ 'active': $page.url === '/blog-create' }">
                 <i class="fa fa-book mr-2"></i>Blog</Link>
-                <Link href="" class="nav-item nav-link"><i class="fa fa-graduation-cap mr-2"></i>Portfolio</Link>
+       
                 <Link href="" class="nav-item nav-link"><i class="fa fa-building mr-2"></i>Service</Link>
             </div>
         </nav>

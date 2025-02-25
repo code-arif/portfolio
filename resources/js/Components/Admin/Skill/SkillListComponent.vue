@@ -58,9 +58,9 @@ const Item = computed(() => {
         <div class="row g-4 mb-3">
             <div class="col-sm-12 col-xl-12">
                 <div class="rounded h-100 p-4" style="background: #191C24;">
-                    <div class="table-responsive table-danger">
+                    <div class="table-responsive">
                         <EasyDataTable buttons-pagination alternating :headers="Header" :items="Item" border-cell
-                            theme-color="#0bceaf" :rows-per-page="15">
+                            theme-color="#0bceaf" :rows-per-page="10">
                             <template #item-certificate="{ certificate }">
                                 <img src="https://skala.or.id/wp-content/uploads/2024/01/dummy-post-square-1-1.jpg"
                                     alt="Course Certificate" style="width: 50px; height: 50px; object-fit: cover;" class="p-1">
@@ -109,7 +109,7 @@ const Item = computed(() => {
 }
 
 .edit-btn{
-    padding: 2px 7px;
+    padding: 1px 5px;
     margin-right: 10px;
     border: 1px solid #0bceaf;
     color: #0bceaf;
@@ -123,7 +123,7 @@ const Item = computed(() => {
 }
 
 .dlt-btn{
-    padding: 2px 7px;
+    padding: 1px 5px;
     margin-right: 10px;
     border: 1px solid red;
     color: red;
