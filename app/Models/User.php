@@ -33,4 +33,7 @@ class User extends Authenticatable
     public function profile(){
         return $this->hasOne(Profile::class);
     }
+    public function userDesignation(){
+        return $this->hasOne(Profile::class)->select('designations');
+    }
 }

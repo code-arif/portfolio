@@ -15,9 +15,7 @@ class DashboardController extends Controller
         return Inertia::render('Admin/CreateBlogPage');
     }
 
-    public function login(){
-        return Inertia::render('Admin/LoginPage');
-    }
+
 
     // public function profile(){
     //     return Inertia::render('Admin/ProfileUpdatePage');

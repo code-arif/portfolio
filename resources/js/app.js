@@ -11,9 +11,9 @@ import './Assets/js/toast.js';
 import Toastify from 'toastify-js';
 import "toastify-js/src/toastify.css";
 
-//quill editor
-import { QuillEditor } from '@vueup/vue-quill'
-import '@vueup/vue-quill/dist/vue-quill.snow.css';
+//data-table
+import Vue3EasyDataTable from 'vue3-easy-data-table';
+import 'vue3-easy-data-table/dist/style.css';
 
 createInertiaApp({
     resolve: (name) =>
@@ -33,7 +33,7 @@ createInertiaApp({
             .use(plugin)
             .use(ZiggyVue)
             .use(Toastify)
-            .use(QuillEditor)
+            .component('EasyDataTable', Vue3EasyDataTable)
             .mount(el);
     },
     progress: {

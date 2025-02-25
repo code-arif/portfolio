@@ -14,26 +14,14 @@ return new class extends Migration
         Schema::create('profiles', function (Blueprint $table) {
             $table->id();
             $table->string('first_name');
-            $table->string('last_name');
+            $table->string('last_name')->nullable();
             $table->string('designations');
             $table->string('phone');
             $table->string('additional_phone')->nullable();
             $table->string('additional_email')->nullable();
             $table->string('secondary_email')->nullable();
-            $table->string('address');
-            $table->string('image_one');
-            $table->string('image_two');
-            $table->string('linkedin')->nullable();
-            $table->string('facebook')->nullable();
-            $table->string('github')->nullable();
-            $table->string('twitter')->nullable();
-            $table->string('instagram')->nullable();
-            $table->string('fiverr')->nullable();
-            $table->string('upwork')->nullable();
-            $table->string('freelancer')->nullable();
+            $table->string('address')->nullable();
             $table->string('bio')->nullable();
-            $table->text('short_description')-> nullable();
-            $table->text('long_description')-> nullable();
             $table->foreignId('user_id')->constrained()->onDelete('cascade');
             $table->timestamps();
         });

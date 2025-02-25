@@ -57,7 +57,7 @@ onMounted(() => {
                             <Link href="/" :class="{ 'active': $page.url === '/' }">Home</Link>
                         </li>
                         <li>
-                            <Link href="/about" :class="{ 'active': $page.url === '/about' }">About</Link>
+                            <Link :href="route('show.about')" :class="{ 'active': route().current('show.about') }">About</Link>
                         </li>
                         <li>
                             <Link href="/portfolio" :class="{ 'active': $page.url === '/portfolio' }">Portfolio</Link>

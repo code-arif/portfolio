@@ -26,10 +26,6 @@
     <link rel="stylesheet" href=" {{ asset('assets/plugins/css/bootstrap.min.css') }} ">
     <!-- Animate CSS-->
     <link rel="stylesheet" href=" {{ asset('assets/plugins/css/animate.css') }} ">
-    <!-- Owl Carousel CSS-->
-    <link rel="stylesheet" href=" {{ asset('assets/plugins/css/owl.css') }} ">
-    <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
     <link rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" />
 
@@ -43,7 +39,7 @@
 
     <!-- Scripts -->
     @routes
-    @vite(['resources/js/app.js', 'resources/css/app.css'])
+    @vite(['resources/js/app.js', 'resources/css/nprogress.css'])
     @inertiaHead
 </head>
 
@@ -58,8 +54,7 @@
     <!-- bootstrap -->
     <script src=" {{ asset('assets/plugins/js/bootstrap.min.js') }}"></script>
     <!-- owl carousel -->
-    {{-- <script src=" {{ asset('assets/assets/plugins/js/owl.carousel.js') }}"></script> --}}
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+
     <script src="{{ asset('assets/plugins/js/isotope.pkgd.js') }}"></script>
     <script src="{{ asset('assets/plugins/js/packery-mode.pkgd.js') }}"></script>
 
@@ -71,8 +66,8 @@
     <!-- Fancybox js-->
     <script src=" {{ asset('assets/plugins/js/jquery.fancybox.min.js') }}"></script>
 
-    <script src=" {{ asset('assets/js/custom-scripts.js') }} "></script>
-    <script src=" {{ asset('assets/navbar/nav.js') }} "></script>
+    <script src=" {{ asset('assets/js/custom.js') }} "></script>
+    <script src=" {{ asset('assets/js/nav.js') }} "></script>
 
 </body>
 

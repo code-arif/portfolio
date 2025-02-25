@@ -123,4 +123,7 @@ return [
         'store' => env('APP_MAINTENANCE_STORE', 'database'),
     ],
 
+    //jwt configuration
+    'jwt_key' => env('JWT_KEY'),
+
 ];

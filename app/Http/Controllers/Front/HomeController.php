@@ -1,18 +1,15 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Front;
 
-use Illuminate\Http\Request;
 use Inertia\Inertia;
+use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
 class HomeController extends Controller
 {
     public function home(){
         return Inertia::render('Front/HomePage');
-    }
-
-    public function about(){
-        return Inertia::render('Front/AboutPage');
     }
 
     public function portfolio(){

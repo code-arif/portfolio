@@ -2,8 +2,13 @@
 
 namespace App\Http\Middleware;
 
+use App\Helper\JWTToken;
+use App\Models\Profile;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Inertia\Middleware;
+
+use function PHPUnit\Framework\isObject;
 
 class HandleInertiaRequests extends Middleware
 {
@@ -22,31 +27,32 @@ class HandleInertiaRequests extends Middleware
         return parent::version($request);
     }
 
-    /**
-     * Define the props that are shared by default.
-     *
-     * @return array<string, mixed>
-     */
     public function share(Request $request): array
     {
+        $token = $request->cookie('token');
+
+        $user = null;
+
+        if ($token) {
+            $payload = JWTToken::verifyToken($token);
+
+            if (is_object($payload) && isset($payload->username)) {
+                $user = User::where('username', $payload->username)->first();
+                $userProfile = Profile::where('user_id', $payload->id)->first();
+            }
+        }
+
         return array_merge(parent::share($request), [
             'flash' => [
                 'message' => fn() => $request->session()->get('message'),
                 'status' => fn() => $request->session()->get('status'),
                 'code' => fn() => $request->session()->get('code'),
             ],
-
-            // 'auth' => [
-            //     'user' => Auth::guard('admin')->check()
-            //         ? [
-            //             'id' => Auth::guard('admin')->id(),
-            //             'name' => Auth::guard('admin')->user()->name,
-            //             // 'email' => Auth::guard('admin')->user()->email,
-            //             'image' => Auth::guard('admin')->user()->image,
-            //             'type' => Auth::guard('admin')->user()->type ?? 'Admin',
-            //         ]
-            //         : null,
-            // ],
+            //for user token validation
+            'authUser' => [
+                'authenticatedUser' => $user ?? null,
+                'userProfile' => $userProfile ?? null,
+            ],
         ]);
     }
 }
