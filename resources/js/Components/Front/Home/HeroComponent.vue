@@ -3,37 +3,39 @@ import { ref, onMounted } from 'vue';
 import HireMeComponent from './HireMeComponent.vue';
 
 const counters = ref([
-  { label: 'Happy Clients', value: 0, target: 120 },
-  { label: 'Completed Projects', value: 0, target: 75 },
-  { label: 'Working Experience', value: 0, target: 5 },
+    { label: 'Happy Clients', value: 0, target: 120 },
+    { label: 'Completed Projects', value: 0, target: 75 },
+    { label: 'Working Experience', value: 0, target: 5 },
 ]);
 
 const animateCounters = () => {
-  counters.value.forEach((counter) => {
-    let current = 0;
-    const step = Math.ceil(counter.target / 100);
-    const interval = setInterval(() => {
-      current += step;
-      if (current >= counter.target) {
-        current = counter.target;
-        clearInterval(interval);
-      }
-      counter.value = current;
-    }, 50);
-  });
+    counters.value.forEach((counter) => {
+        let current = 0;
+        const step = Math.ceil(counter.target / 100);
+        const interval = setInterval(() => {
+            current += step;
+            if (current >= counter.target) {
+                current = counter.target;
+                clearInterval(interval);
+            }
+            counter.value = current;
+        }, 50);
+    });
 };
 
 onMounted(() => {
-  animateCounters();
+    animateCounters();
 });
 </script>
 
 <template>
     <section class="codearif-home image-bg home-2-img" id="codearif-home">
-        <div class="img-foverlay img-color-overlay">
+        <div class="img-color-overlay">
             <div class="container">
-                <div class="row section-separator xs-column-reverse vertical-middle-content home-padding">
-                    <div class="col-sm-6">
+                <div class="row section-separator">
+
+                    <!-- left content -->
+                    <div class="col-lg-6 col-md-12 text-md-start p-3">
                         <div class="codearif-header-info">
                             <div class="codearif-promo wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.1s">
                                 <span>Hello There I'm</span>
@@ -51,21 +53,27 @@ onMounted(() => {
                                 autem ut expedita voluptatum qui!</p>
                         </div>
 
-                        <div class="d-flex justify-content-between wow fadeInUp" data-wow-duration="0.8s"
-                            data-wow-delay="0.5s">
-                            <div v-for="(counter, index) in counters" :key="index">
+                        <!-- Counters -->
+                        <div class="d-flex flex-wrap justify-content-md-between mt-4 wow fadeInUp"
+                            data-wow-duration="0.8s" data-wow-delay="0.5s">
+                            <div v-for="(counter, index) in counters" :key="index" class="p-2">
                                 <h2>{{ counter.value }} +</h2>
                                 <p>{{ counter.label }}</p>
                             </div>
                         </div>
 
-                        <a href="#" class="btn btn-fill wow fadeInUp" data-wow-duration="0.8s"
-                            data-wow-delay="0.4s" data-toggle="modal" data-target="#exampleModal"> Hire Me </a>
+                        <!-- Hire Me Button -->
+                        <div class="mt-4">
+                            <a href="#" class="btn btn-fill wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.4s"
+                                data-toggle="modal" data-target="#exampleModal"> Hire Me </a>
+                        </div>
                     </div>
-                    <div class="col-sm-6">
+
+                    <!-- Right Image -->
+                    <div class="col-lg-6 col-md-12 text-center p-3">
                         <div class="hero-img wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.6s">
                             <div class="img-border">
-                                <img src="assets/images/hero.png" alt="" class="img-fluid">
+                                <img src="assets/images/hero.png" alt="Hero Image" class="img-fluid">
                             </div>
                         </div>
                     </div>
@@ -75,7 +83,7 @@ onMounted(() => {
     </section>
 
     <!-- hire me modal management -->
-     <HireMeComponent />
+    <HireMeComponent />
 </template>
 
 <style scoped></style>

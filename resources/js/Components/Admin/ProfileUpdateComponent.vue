@@ -111,7 +111,7 @@ const passwordForm = useForm({
                                     style="height: 70px; resize: none;" v-model="form.address"></textarea>
                             </div>
                         </div>
-                        <button type="submit" class="btn btn-outline-info w-100"> Submit </button>
+                        <button type="submit" class="btn btn-info w-100"> Submit </button>
                     </form>
                 </div>
             </div>
@@ -139,7 +139,7 @@ const passwordForm = useForm({
                                     placeholder="Confirm Password">
                             </div>
                         </div>
-                        <button type="submit" class="btn btn-outline-light w-100"> Submit </button>
+                        <button type="submit" class="btn btn-info w-100"> Submit </button>
                     </form>
                 </div>
             </div>

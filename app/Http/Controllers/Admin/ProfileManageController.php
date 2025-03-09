@@ -15,10 +15,6 @@ class ProfileManageController extends Controller
         {
             $id = $request->header('id');
             $profile = Profile::where('user_id', $id)->first();
-
-            if (!$profile) {
-                return response()->json(['error' => 'User not found'], 404);
-            }
     
             return Inertia::render('Admin/ProfileUpdatePage', [
                 'profile' => $profile,
@@ -51,7 +47,6 @@ class ProfileManageController extends Controller
                 'secondary_email' => 'nullable|email|max:255',
                 'address' => 'nullable|string|max:255',
                 'bio' => 'nullable|string|max:255',
-                'user_id' => 'required',
             ]);
             // Update the profile
             $profile->update($validated_data);
