@@ -5,7 +5,7 @@ import AdminLayout from '@/Layouts/AdminLayout.vue';
 
 <template>
     <Head>
-        <title> CodeAirf || Dashboard</title>
+        <title> CodeArif || Dashboard</title>
     </Head>
 
     <AdminLayout>

@@ -19,36 +19,47 @@ const authUserProfile = page.props?.authUser?.userProfile;
                         style="width: 40px; height: 40px; border: 2px solid #0bceaf;">
                 </div>
                 <div class="ms-3 ml-2">
-                    <h6 class="mb-0" style="color: #0bceaf;">{{ authUserProfile?.first_name ?? 'Ariful Islam' }} {{
-                        authUserProfile?.last_name }}</h6>
+                    <h6 class="mb-0" style="color: #0bceaf;">{{ authUserProfile?.first_name ?? 'Ariful Islam' }}</h6>
                     <span style="color: antiquewhite;">{{ authUserProfile?.designations ?? 'Web Developer' }}</span>
                 </div>
             </div>
             <div class="navbar-nav w-100">
                 <Link :href="route('show.admin.dashbaord')" class="nav-item nav-link"
-                    :class="{ 'active': route().current('show.admin.dashbaord') }"><i
-                    class="fa fa-tachometer mr-2"></i>Dashboard</Link>
+                    :class="{ 'active': route().current('show.admin.dashbaord') }">
+                    <i class="fa fa-desktop mr-2" aria-hidden="true"></i> Dashboard</Link>
 
                 <!-- profile -->
-                <Link :href="route('show.profile')" class="nav-item nav-link"
-                    :class="{ 'active': route().current('show.profile') }">
+                <Link :href="route('show.add.edit.profile')" class="nav-item nav-link"
+                    :class="{ 'active': route().current('show.add.edit.profile') }">
                 <i class="fa fa-user mr-2"></i>Profile
                 </Link>
 
                 <!-- about -->
-                <Link :href="route('show.manage.about.page')" class="nav-item nav-link"
-                    :class="{ 'active': route().current('show.manage.about.page') }">
-                    <i class="fa fa-user-plus mr-2"></i>About
+                <Link :href="route(['show.add.edit.about'])" class="nav-item nav-link"
+                    :class="{ 'active': route().current('show.add.edit.about') }">
+                    <i class="fa fa-book mr-2" aria-hidden="true"></i>About
                 </Link>
 
-                <Link :href="route('show.skill.list.page')" class="nav-item nav-link" :class="{ 'active': route().current('show.skill.list.page') }"><i class="fa fa-pencil-square mr-2"></i>Skills</Link>
+                <!-- skills -->
+                <Link :href="route('show.skill.list')" class="nav-item nav-link" :class="{ 'active': route().current('show.skill.list') }"><i class="fa fa-pencil-square mr-2"></i>Skills</Link>
                
-                <Link href="" class="nav-item nav-link"><i class="fa fa-graduation-cap mr-2"></i>Portfolio</Link>
+                <!-- education -->
+                <Link :href="route('show.degree.list')" class="nav-item nav-link" :class="{ 'active': route().current('show.degree.list') }"><i class="fa fa-graduation-cap mr-2"></i>Education</Link>
+               
+                <!-- portfolio -->
+                <Link :href="route('show.portfolio.list')" class="nav-item nav-link" :class="{'active': route().current('show.portfolio.list')}"><i class="fa fa-building-o mr-2" aria-hidden="true"></i>Portfolio</Link>
+
+                <!-- social link -->
+                <Link :href="route('show.social.links')" class="nav-item nav-link"
+                    :class="{ 'active': route().current('show.social.links') }">
+                    <i class="fa fa-share-square mr-2" aria-hidden="true"></i>Social Link
+                </Link>
+
+                <!-- services -->
+                <Link :href="route('show.service.list')" class="nav-item nav-link" :class="{'active' : route().current('show.service.list')}"><i class="fa fa-globe mr-2" aria-hidden="true"></i>Service</Link>
 
                 <Link href="/blog-create" class="nav-item nav-link" :class="{ 'active': $page.url === '/blog-create' }">
                 <i class="fa fa-book mr-2"></i>Blog</Link>
-       
-                <Link href="" class="nav-item nav-link"><i class="fa fa-building mr-2"></i>Service</Link>
             </div>
         </nav>
     </div>

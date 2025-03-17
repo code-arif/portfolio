@@ -6,7 +6,7 @@ import { Head } from '@inertiajs/vue3';
 
 <template>
     <Head>
-        <title> CodeAirf || Add/Edit Skill</title>
+        <title> CodeArif || Add/Edit Skill</title>
     </Head>
 
     <AdminLayout>

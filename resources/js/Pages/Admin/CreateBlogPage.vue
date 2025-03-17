@@ -6,7 +6,7 @@ import CreateBlogComponent from '@/Components/Admin/CreateBlogComponent.vue';
 
 <template>
     <Head>
-        <title> CodeAirf || Create Blog</title>
+        <title> CodeArif || Create Blog</title>
     </Head>
 
     <AdminLayout>

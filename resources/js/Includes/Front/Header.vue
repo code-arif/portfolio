@@ -1,8 +1,11 @@
 <script setup>
 import { ref, onMounted } from 'vue';
+import axios from 'axios';
 import { Link } from '@inertiajs/vue3';
 
 const isMobileNavActive = ref(false);
+const profileData = ref(null);
+const socialLinks = ref(null);
 
 const toggleMobileNav = () => {
     isMobileNavActive.value = !isMobileNavActive.value;
@@ -14,13 +17,26 @@ const closeMobileNavOnLinkClick = () => {
     }
 };
 
-onMounted(() => {
+onMounted(async () => {
+    try {
+        const response = await axios.get('/get-profile');
+        if (response.data.length > 0) {
+            profileData.value = response.data[0]; 
+        }
+        if (response.data.length > 1) {
+            socialLinks.value = response.data[1];
+        }
+    } catch (error) {
+        console.error('Error fetching profile data:', error);
+    }
+
     const navLinks = document.querySelectorAll('#navmenu a');
     navLinks.forEach(link => {
         link.addEventListener('click', closeMobileNavOnLinkClick);
     });
 });
 </script>
+
 
 <template>
     <header id="header" :class="{ 'mobile-nav-active': isMobileNavActive }" class="header sticky-top">
@@ -29,16 +45,26 @@ onMounted(() => {
             <div class="container d-flex justify-content-center justify-content-md-between">
                 <div class="contact-info d-flex align-items-center">
                     <i class="fa fa-envelope d-flex align-items-center">
-                        <a class="contact-line" href="mailto:contact@example.com">contact@example.com</a>
+                        <a class="contact-line" v-if="profileData" :href="'mailto:' + profileData.additional_email">
+                            {{ profileData.additional_email }}
+                        </a>
                     </i>
                     <i class="fa fa-whatsapp d-flex align-items-center ml-4">
-                        <span class="contact-line">+1 5589 55488 55 (Whatsapp)</span>
+                        <span class="contact-line" v-if="profileData">
+                            +880 {{ profileData.phone }}
+                        </span>
                     </i>
                 </div>
                 <div class="social-links d-none d-md-flex align-items-center">
-                    <a href="#" class="facebook"><i class="fa fa-facebook"></i></a>
-                    <a href="#" class="github"><i class="fa fa-github"></i></a>
-                    <a href="#" class="linkedin"><i class="fa fa-linkedin"></i></a>
+                    <a v-if="socialLinks?.facebook" :href="socialLinks.facebook" target="_blank" class="facebook">
+                        <i class="fa fa-facebook"></i>
+                    </a>
+                    <a v-if="socialLinks?.github" :href="socialLinks.github" target="_blank" class="github">
+                        <i class="fa fa-github"></i>
+                    </a>
+                    <a v-if="socialLinks?.linkedin" :href="socialLinks.linkedin" target="_blank" class="linkedin">
+                        <i class="fa fa-linkedin"></i>
+                    </a>
                 </div>
             </div>
         </div>
@@ -57,7 +83,8 @@ onMounted(() => {
                             <Link href="/" :class="{ 'active': $page.url === '/' }">Home</Link>
                         </li>
                         <li>
-                            <Link :href="route('show.about')" :class="{ 'active': route().current('show.about') }">About</Link>
+                            <Link :href="route('show.about')" :class="{ 'active': route().current('show.about') }">About
+                            </Link>
                         </li>
                         <li>
                             <Link href="/portfolio" :class="{ 'active': $page.url === '/portfolio' }">Portfolio</Link>
@@ -79,7 +106,3 @@ onMounted(() => {
         </div>
     </header>
 </template>
-
-<style scoped>
-
-</style>

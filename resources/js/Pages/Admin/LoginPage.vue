@@ -33,7 +33,7 @@ function AdminLogin(){
 <template>
 
     <Head>
-        <title> CodeAirf || Login</title>
+        <title> CodeArif|| Login</title>
     </Head>
 
     <div class="container-fluid position-relative d-flex p-0">

@@ -1,5 +1,8 @@
 <script setup>
-import { Link } from '@inertiajs/vue3';
+import { Link, usePage } from '@inertiajs/vue3';
+
+const page = usePage();
+const services = page.props.services || [];
 </script>
 
 <template>
@@ -35,39 +38,15 @@ import { Link } from '@inertiajs/vue3';
                     data-wow-delay="0.2s">
                     <h2>What I do ??</h2>
                 </div>
-                <div class="col-sm-4">
+                
+                <div class="col-sm-4" v-for="service in services" :key="service.id">
                     <div class="codearif-service-item shadow-1 wow fadeInUp" data-wow-duration="0.8s"
                         data-wow-delay="0.3s">
-                        <i class="fa fa-bullseye purple-color"></i>
-                        <h3>UI Design</h3>
+                        <!-- Dynamic color binding using :style -->
+                        <i :class="service.icon" :style="{color: service.icon_color_code}"></i>
+                        <h3>{{ service?.name }}</h3>
                         <p>
-                            Lorem ipsum dolor sit amet, consectetuer adipiscing elit,
-                            sed diam nonummy nibh euismod tincidunt ut laoreet dolore
-                            magna aliquam erat volutpat.
-                        </p>
-                    </div>
-                </div>
-                <div class="col-sm-4">
-                    <div class="codearif-service-item shadow-1 wow fadeInUp" data-wow-duration="0.8s"
-                        data-wow-delay="0.5s">
-                        <i class="fa fa-code iron-color"></i>
-                        <h3>Web Development</h3>
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetuer adipiscing elit,
-                            sed diam nonummy nibh euismod tincidunt ut laoreet dolore
-                            magna aliquam erat volutpat.
-                        </p>
-                    </div>
-                </div>
-                <div class="col-sm-4">
-                    <div class="codearif-service-item shadow-1 wow fadeInUp" data-wow-duration="0.8s"
-                        data-wow-delay="0.7s">
-                        <i class="fa fa-object-ungroup sky-color"></i>
-                        <h3>App Development</h3>
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetuer adipiscing elit,
-                            sed diam nonummy nibh euismod tincidunt ut laoreet dolore
-                            magna aliquam erat volutpat.
+                            {{ service?.description }}
                         </p>
                     </div>
                 </div>

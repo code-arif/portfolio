@@ -1,6 +1,9 @@
 <script setup>
 import { ref, onMounted } from 'vue';
 import HireMeComponent from './HireMeComponent.vue';
+import { usePage } from '@inertiajs/vue3';
+
+const page = usePage();
 
 const counters = ref([
     { label: 'Happy Clients', value: 0, target: 120 },
@@ -26,6 +29,13 @@ const animateCounters = () => {
 onMounted(() => {
     animateCounters();
 });
+
+//load user profile
+const profile = page.props?.profile || {};
+const about = page.props?.about || {};
+const image = page.props?.image || {};
+
+const hero_image_preview = ref(image.hero_image ? `/storage/${image.hero_image}` : '/assets/images/hero.png');
 </script>
 
 <template>
@@ -38,19 +48,13 @@ onMounted(() => {
                     <div class="col-lg-6 col-md-12 text-md-start p-3">
                         <div class="codearif-header-info">
                             <div class="codearif-promo wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.1s">
-                                <span>Hello There I'm</span>
+                                <span>Hello, I'm</span>
                             </div>
 
-                            <h2 class="wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.2s">Md. Ariful Islam
-                            </h2>
-                            <h4 class="wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.3s">Web Developer
+                            <h2 class="wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.2s">{{ profile?.first_name }} {{ profile?.last_name }}</h2>
+                            <h4 class="wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.3s">{{ profile?.designations }}
                             </h4>
-                            <p class="wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.4s">Lorem ipsum dolor sit
-                                amet consectetur adipisicing elit. Aliquam quos saepe molestiae
-                                doloribus minus voluptatum. Eius eum doloremque, veritatis perspiciatis suscipit dolores
-                                magni repudiandae numquam a ab. Aliquam tempora excepturi nostrum minus laudantium rem
-                                dolor repudiandae quas, quibusdam cum asperiores, officiis est voluptate! Quae quas
-                                autem ut expedita voluptatum qui!</p>
+                            <p class="wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.4s"> {{ about?.short_description }} </p>
                         </div>
 
                         <!-- Counters -->
@@ -70,10 +74,10 @@ onMounted(() => {
                     </div>
 
                     <!-- Right Image -->
-                    <div class="col-lg-6 col-md-12 text-center p-3">
+                    <div class="col-lg-6 col-md-12 text-center p-3 mt-5">
                         <div class="hero-img wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.6s">
                             <div class="img-border">
-                                <img src="assets/images/hero.png" alt="Hero Image" class="img-fluid">
+                                <img :src="hero_image_preview" alt="Hero Image" class="img-fluid">
                             </div>
                         </div>
                     </div>
@@ -86,4 +90,9 @@ onMounted(() => {
     <HireMeComponent />
 </template>
 
-<style scoped></style>
+<style scoped>
+/* .hero_image{
+    height: 50%;
+    width: 50%;
+} */
+</style>

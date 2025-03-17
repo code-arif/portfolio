@@ -1,15 +1,15 @@
 window.successToast = function (msg) {
     Toastify({
         text: `<span>${msg}</span>
-               <span style="cursor: pointer; color: #009CFF; margin-left: 10px; display: flex; justify-content: center; align-items: center;" onclick="this.parentNode.style.display='none'">
+               <span style="cursor: pointer; color: #0bceaf; margin-left: 10px; display: flex; justify-content: center; align-items: center;" onclick="this.parentNode.style.display='none'">
                    <i class="fa fa-times" aria-hidden="true"></i>
                </span>`,
         escapeMarkup: false, // Allow HTML content in the message
         className: "info",
         duration: 1500,
         style: {
-            background: "#d6eaf8",
-            borderLeft: "5px solid #009CFF",
+            background: "#d1f2eb",
+            borderLeft: "5px solid #0bceaf",
             padding: "10px 15px",
             color: "#009CFF",
             display: "flex",

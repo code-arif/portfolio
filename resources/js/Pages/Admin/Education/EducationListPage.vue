@@ -1,16 +1,16 @@
 <script setup>
-import AboutComponent from '@/Components/Admin/About/AboutComponent.vue';
+import EducationListComponent from '@/Components/Admin/Education/EducationListComponent.vue';
 import AdminLayout from '@/Layouts/AdminLayout.vue';
 import { Head } from '@inertiajs/vue3';
 </script>
 
 <template>
     <Head>
-        <title> CodeAirf || About Admin </title>
+        <title> CodeArif || Admin Education</title>
     </Head>
 
     <AdminLayout>
-        <AboutComponent/>
+        <EducationListComponent/>
     </AdminLayout>
 </template>
 

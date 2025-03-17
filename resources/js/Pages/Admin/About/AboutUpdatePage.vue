@@ -1,16 +1,16 @@
 <script setup>
-import ProfileUpdateComponent from '@/Components/Admin/ProfileUpdateComponent.vue';
+import AboutUpdateComponent from '@/Components/Admin/About/AboutUpdateComponent.vue';
 import AdminLayout from '@/Layouts/AdminLayout.vue';
 import { Head } from '@inertiajs/vue3';
 </script>
 
 <template>
     <Head>
-        <title> CodeAirf || Admin Profile</title>
+        <title> CodeAirf || About Admin </title>
     </Head>
 
     <AdminLayout>
-        <ProfileUpdateComponent/>
+        <AboutUpdateComponent/>
     </AdminLayout>
 </template>
 

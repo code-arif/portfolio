@@ -5,32 +5,42 @@ import { computed } from 'vue';
 const page = usePage();
 
 const Header = [
-    { text: "No", value: "no" },
-    { text: "Certificate", value: "certificate" },
-    { text: "Title", value: "title" },
-    { text: "Start Date", value: "start_date", width:100 },
-    { text: "End Date", value: "end_date", width:100 },
-    { text: "Language or Key", value: "language_or_key", width:150 },
-    { text: "Category", value: "category" },
-    { text: "Batch", value: "batch_no" },
-    { text: "Institute", value: "institute", width: 80 },
-    { text: "Trainer", value: "trainer", width: 150 },
-    { text: "Action", value: "action", width: 20},
+    { text: "No", value: "no"},
+    { text: "Certificate", value: "certificate_image" },
+    { text: "Progress Certificate", value: "progress_certificate", width: 100},
+    { text: "Title", value: "title", width: 200},
+    { text: "Start Date", value: "start_date", width: 100},
+    { text: "End Date", value: "end_date", width: 100},
+    { text: "Language or Key", value: "language_or_key", width: 200},
+    { text: "Category", value: "category"},
+    { text: "Batch No", value: "batch_no", width: 100 },
+    { text: "Batch Name", value: "batch_name", width: 100},
+    { text: "Student Id" , value: "student_id", width: 100},
+    { text: "Institute", value: "institute_name", width: 200},
+    { text: "Branch", value: "institute_branch", width: 100},
+    { text: "Website", value: "institute_website"},
+    { text: "Trainers", value: "trainer_name"},
+    { text: "Action", value: "action"},
 ];
 
 // Transform data for table
 const Item = computed(() => {
     return page.props.skills?.map((skill, index) => ({
         no: index + 1,
-        certificate: skill.certificate,
+        certificate_image: skill.certificate_image,
+        progress_certificate: skill.progress_certificate,
         title: skill.title,
         start_date: skill.start_date,
         end_date: skill.end_date,
         language_or_key: skill.language_or_key,
         category: skill.category,
         batch_no: skill.batch_no,
-        institute: skill.institute,
-        trainer: skill.trainer,
+        batch_name: skill.batch_name,
+        student_id: skill.student_id,
+        institute_name: skill.institute_name,
+        institute_branch: skill.institute_branch,
+        institute_website: skill.institute_website,
+        trainer_name: skill.trainer_name,
         id: skill.id,
     }));
 });
@@ -61,9 +71,13 @@ const Item = computed(() => {
                     <div class="table-responsive">
                         <EasyDataTable buttons-pagination alternating :headers="Header" :items="Item" border-cell
                             theme-color="#0bceaf" :rows-per-page="10">
-                            <template #item-certificate="{ certificate }">
-                                <img src="https://skala.or.id/wp-content/uploads/2024/01/dummy-post-square-1-1.jpg"
+                            <template #item-certificate_image="{ certificate_image }">
+                                <img :src="certificate_image ? `/storage/${certificate_image}` : '/assets/images/placeholder-image.jpg'"
                                     alt="Course Certificate" style="width: 50px; height: 50px; object-fit: cover;" class="p-1">
+                            </template>
+                            <template #item-progress_certificate="{ progress_certificate }">
+                                <img :src="progress_certificate ? `/storage/${progress_certificate}` : '/assets/images/placeholder-image.jpg'"
+                                    alt="Progress Certificate" style="width: 50px; height: 50px; object-fit: cover;" class="p-1">
                             </template>
                             <template #item-status="{ status, id }">
                                 <button @click="toggleStatus(id, status)"
@@ -109,7 +123,7 @@ const Item = computed(() => {
 }
 
 .edit-btn{
-    padding: 1px 5px;
+    padding: 1.5px 6px;
     margin-right: 10px;
     border: 1px solid #0bceaf;
     color: #0bceaf;
@@ -123,7 +137,7 @@ const Item = computed(() => {
 }
 
 .dlt-btn{
-    padding: 1px 5px;
+    padding: 1.5px 6px;
     margin-right: 10px;
     border: 1px solid red;
     color: red;
